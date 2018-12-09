@@ -23,8 +23,20 @@ export default class Paintbrush {
     }
 
     changeWide(wide) {
-        this._wide = wide;
-        return true;
+        if (Number.isInteger(wide) && wide > 0) {
+            this._wide = wide;
+            return true;
+        } else {
+            try {
+                wide = parseInt(wide);
+                if (wide > 0) {
+                    this._wide = wide;
+                    return true;
+                }
+            } catch (error) {
+                throw 'Enter a valid number';
+            }
+        }
     }
 
     isDrawing() {
