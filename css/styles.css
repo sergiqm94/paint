@@ -1,0 +1,135 @@
+body {
+  background-color: #e0e0e0;
+}
+
+.header {
+  margin-bottom: 25px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.wide {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.wide.selected {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.canvas-container {
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 6px 13px 56px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 13px 56px -2px rgba(0, 0, 0, 0.75);
+}
+
+.color {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-right: 2px;
+}
+
+.color.black {
+  background-color: #000;
+}
+
+.color.white {
+  background-color: #fff;
+}
+
+.color.red {
+  background-color: #ff0000;
+}
+
+.color.blue {
+  background-color: #0066ff;
+}
+
+.color.green {
+  background-color: #33cc33;
+}
+
+.color.yellow {
+  background-color: #FFD700;
+}
+
+.color.orange {
+  background-color: #FF7429;
+}
+
+.color .selected {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/selected.svg");
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #868585;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.sidenav #actions, .sidenav #colors, .sidenav #wides {
+  padding: 5px 0;
+}
+
+.main {
+  margin-left: 160px;
+  padding: 0px 10px;
+}
+
+@media screen and (min-width: 450px) {
+  .sidenav {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sidenav {
+    padding-top: 15px;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+  }
+  .sidenav #actions, .sidenav #colors, .sidenav #wides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .main {
+    margin: 0;
+  }
+  .wide {
+    display: inline-block;
+    width: 50px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
