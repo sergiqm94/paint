@@ -150,5 +150,10 @@ export default class Paintbrush {
         });
     }
 
+    clean() {
+        this._history = [];
+        this._history_pointer = 0;
+    }
+
 }
 

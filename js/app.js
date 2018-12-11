@@ -19,6 +19,7 @@ $(document).ready(function () {
     var $canvas = canvas.ini($('.canvas-container'));
     var $undo = $('#undo');
     var $redo = $('#redo');
+    var $clean = $('#clean button');
 
     $('.canvas-container').css('width', canvas.width);
     $('.canvas-container').css('height', canvas.height);
@@ -59,6 +60,10 @@ $(document).ready(function () {
 
     $redo.click(function () { 
         paintbrush.redo(canvas.element());
+    });
+
+    $clean.click(function () { 
+        clean(canvas.element(), paintbrush);
     });
 
     $( window ).resize(function() {
@@ -110,4 +115,9 @@ function resizeCanvas(canvas) {
     var width = $('.canvas-container').width();
     var height = $('.canvas-container').height();
     canvas.resize(width, height);
+}
+
+function clean(canvas, paintbrush) {
+    canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+    paintbrush.clean();
 }

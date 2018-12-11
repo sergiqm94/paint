@@ -92,24 +92,31 @@ body {
     padding: 0px 10px;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 451px) {
     .sidenav {
         top: 0;
     }
 }
 
 @media screen and (max-width: 450px) {
+    html, body {
+        overflow: hidden;
+    }
     .sidenav {
         padding-top: 15px;
         bottom: 0;
         height: auto;
         width: 100%;
 
-        #actions, #colors, #wides {
+        #actions, #colors, #wides, #clean {
             display: flex;
             align-content: center;
             justify-content: center;
             width: 100%;
+        }
+
+        #clean button {
+            margin: auto;
         }
     }
 

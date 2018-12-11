@@ -100,20 +100,23 @@ body {
   padding: 0px 10px;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 451px) {
   .sidenav {
     top: 0;
   }
 }
 
 @media screen and (max-width: 450px) {
+  html, body {
+    overflow: hidden;
+  }
   .sidenav {
     padding-top: 15px;
     bottom: 0;
     height: auto;
     width: 100%;
   }
-  .sidenav #actions, .sidenav #colors, .sidenav #wides {
+  .sidenav #actions, .sidenav #colors, .sidenav #wides, .sidenav #clean {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -123,6 +126,9 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
+  }
+  .sidenav #clean button {
+    margin: auto;
   }
   .main {
     margin: 0;
