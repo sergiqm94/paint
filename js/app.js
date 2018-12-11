@@ -54,11 +54,6 @@ $(document).ready(function () {
         paintbrush.stopDraw();
     });
 
-    $canvas.on("touchstart",  function(event) {event.preventDefault()});
-    $canvas.on("touchmove",   function(event) {event.preventDefault()});
-    $canvas.on("touchend",    function(event) {event.preventDefault()});
-    $canvas.on("touchcancel", function(event) {event.preventDefault()});
-
     $undo.click(function () { 
         paintbrush.undo(canvas.element());
     });
@@ -70,6 +65,14 @@ $(document).ready(function () {
     $clean.click(function () { 
         clean(canvas.element(), paintbrush);
     });
+
+    $canvas.on("touchstart",  function(evt) {evt.preventDefault()});
+    $canvas.on("touchmove",   function(evt) {evt.preventDefault()});
+    $canvas.on("touchend",    function(evt) {evt.preventDefault()});
+    $canvas.on("touchcancel", function(evt) {evt.preventDefault()});
+    $undo.dblclick(function(evt) {evt.preventDefault()});
+    $redo.dblclick(function(evt) {evt.preventDefault()});
+    $clean.dblclick(function(evt) {evt.preventDefault()});
 
     $( window ).resize(function() {
         resizeCanvas(canvas);
