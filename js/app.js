@@ -54,6 +54,11 @@ $(document).ready(function () {
         paintbrush.stopDraw();
     });
 
+    $canvas.on("touchstart",  function(event) {event.preventDefault()});
+    $canvas.on("touchmove",   function(event) {event.preventDefault()});
+    $canvas.on("touchend",    function(event) {event.preventDefault()});
+    $canvas.on("touchcancel", function(event) {event.preventDefault()});
+
     $undo.click(function () { 
         paintbrush.undo(canvas.element());
     });
